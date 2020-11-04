@@ -1,0 +1,14 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <app-header></app-header>
+
+</div>
+    <div fxLayout="row" fxLayoutAlign="end center" >
+    <shopping-cart (click)="openDialog(cartProductList)" [products]="cartProductList" (productRemoved)="removeProduct($event)"></shopping-cart>
+    
+</div>
+<router-outlet></router-outlet>
+
+<product-list (productAdded)="addProductToCart($event)" [products]="productList"></product-list>
+<div fxLayout="row" fxLayoutAlign="center center">
+
+<app-footer></app-footer></div>
